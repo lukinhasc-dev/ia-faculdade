@@ -147,3 +147,20 @@ kmeans.fit(X)
 
 for i, frase in enumerate(frases):
     print(f"'{frase}' => Cluster {kmeans.labels_[i]}")
+
+
+#TAREFA 6
+
+print("\n--- TAREFA 6 ---")
+print("Análise de Produtos Âncora")
+
+dados_produtos = np.array([ [10, 2], [15, 3], [12, 1], [200, 9], [180, 8], [210, 10] ])
+
+modelo_produtos = KMeans(n_clusters=2, random_state=42, n_init=10)
+modelo_produtos.fit(dados_produtos)
+
+produtos_ancora = modelo_produtos.cluster_centers_
+
+print(f"Características dos Produtos Âncora (Preço, Popularidade):\n{produtos_ancora}")
+
+
