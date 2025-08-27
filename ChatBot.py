@@ -124,3 +124,26 @@ kmeans.fit(X)
 
 for i, msg in enumerate(mensagens_cluster):
     print(f"'{msg}' => Cluster {kmeans.labels_[i]}")
+
+#TAREFA 5 
+
+print("--- TAREFA 5 ---")
+frases = [
+    "Quero reservar hotel",
+    "Quais são os melhores restaurantes?",
+    "Quero comprar passagem para Salvador",
+    "Onde encontro passeios turísticos?",
+    "Tem promoção em passagens?",
+    "Sugira um passeio cultural",
+    "Qual o preço da hospedagem?",
+    "Quero fazer um tour gastronômico"
+]
+
+vectorizer = CountVectorizer()
+X = vectorizer.fit_transform(frases)
+
+kmeans = KMeans(n_clusters=3, random_state=42, n_init=10)
+kmeans.fit(X)
+
+for i, frase in enumerate(frases):
+    print(f"'{frase}' => Cluster {kmeans.labels_[i]}")
